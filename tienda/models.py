@@ -4,20 +4,18 @@ from django.db import models
 
 class Tienda( models.Model ):
     id = models.AutoField( primary_key = True )
-    nombre = models.CharField( max_length = 100, blank = False, null = False )
+    nombre_tienda = models.CharField( max_length = 100, blank = False, null = False )
     direccion = models.CharField( max_length = 100, blank = False, null = False )
     ciudad = models.CharField( max_length = 50, blank = False, null = False )
     comuna = models.CharField( max_length = 50 )
     telefono = models.CharField( max_length = 9 )
     email =  models.EmailField( max_length = 50 )
-    #falta encargado de la tienda
+    encarg_tienda = models.CharField( max_length = 255)
 
     def __str__( self ):
-        return self.nombre
+        return self.nombre_tienda
 
 
-
-    
 
 class Producto( models.Model ):
 
@@ -33,16 +31,28 @@ class Producto( models.Model ):
 
     
     id = models.AutoField( primary_key = True )
-    nombre = models.CharField( max_length = 100, blank = False, null = False )
+    nombre_producto = models.CharField( max_length = 100, blank = False, null = False )
     descripcion = models.TextField( default= '' )
-    precio = models.DecimalField(max_digits=10, decimal_places=0)
+    precio = models.CharField( max_length = 10 )
     tipo = models.CharField( max_length=10, choices=STATE_CHOICES, default=PRODUCTO1)
     
 
     def __str__( self ):
-        return self.nombre
+        return self.nombre_producto
 
     def __str__(self):
-        return str(self.nombre) + ": $" + str(self.precio)
+        return str(self.nombre_producto) + ": $" + str(self.precio)
+
+
+
+
+class Vendedor( models.Model ):
+    id = models.AutoField( primary_key = True )
+    nombre_vendedor = models.CharField( max_length = 255 )
+    #agregar dependencia
+
+
+    def __str__( self ):
+        return self.nombre_vendedor   
 
 

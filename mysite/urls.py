@@ -24,6 +24,7 @@ from django.conf.urls import url, include
 router = routers.DefaultRouter()
 router.register(r'Tienda', views.TiendaViewSet)
 router.register(r'Producto', views.ProductosViewSet)
+router.register(r'Vendedor', views.VendedorViewSet)
 
 
 urlpatterns = [

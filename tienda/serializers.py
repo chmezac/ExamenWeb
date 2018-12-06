@@ -1,14 +1,20 @@
-from .models import Tienda, Producto
+from .models import Tienda, Producto, Vendedor
 from rest_framework import serializers
 
 class TiendaSerializer( serializers.HyperlinkedModelSerializer ):
 
     class Meta:
         model = Tienda
-        fields = ( 'id', 'nombre', 'direccion', 'ciudad', 'comuna', 'telefono', 'email')
+        fields = ( 'id', 'nombre_tienda', 'direccion', 'ciudad', 'comuna', 'telefono', 'email', 'encarg_tienda')
 
 
 class ProductoSerializer( serializers.HyperlinkedModelSerializer ):
     class Meta:
             model = Producto
-            fields = ( 'id', 'nombre', 'descripcion', 'precio', 'tipo')
+            fields = ( 'id', 'nombre_producto', 'descripcion', 'precio', 'tipo')
+
+
+class VendedorSerializer ( serializers.HyperlinkedModelSerializer ):
+    class Meta:
+        model = Vendedor
+        fields = ( 'id', 'nombre_vendedor' )
