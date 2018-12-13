@@ -17,4 +17,4 @@ class ProductoSerializer( serializers.HyperlinkedModelSerializer ):
 class VendedorSerializer ( serializers.HyperlinkedModelSerializer ):
     class Meta:
         model = Vendedor
-        fields = ( 'id', 'nombre_vendedor' )
+        fields = ( 'id', 'nombre_vendedor', 'email_v', 'password_v')

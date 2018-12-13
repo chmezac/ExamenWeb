@@ -37,7 +37,7 @@ class Producto( models.Model ):
     nombre_producto = models.CharField( max_length = 100, blank = False, null = False )
     descripcion = models.TextField( default= '' )
     precio = models.CharField( max_length = 10 )
-    tipo = models.CharField( max_length=10, choices=STATE_CHOICES, default=NOTEBOOKS)
+    tipo = models.CharField( max_length=20, choices=STATE_CHOICES, default=NOTEBOOKS)
     imageUrl = models.CharField( max_length = 255, default = '' )
 
     def __str__( self ):
@@ -52,7 +52,9 @@ class Producto( models.Model ):
 class Vendedor( models.Model ):
     id = models.AutoField( primary_key = True )
     nombre_vendedor = models.CharField( max_length = 255 )
-    #agregar dependencia
+    
+    email_v = models.CharField(max_length = 255)
+    password_v = models.CharField(max_length=30)
 
 
     def __str__( self ):
