@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from tienda.models import Tienda
+from tienda.models import Vendedor
+from tienda.models import Producto
+
 from tienda import views
 from rest_framework import routers
 from django.conf.urls import url, include

@@ -19,14 +19,17 @@ class Tienda( models.Model ):
 
 class Producto( models.Model ):
 
-    PRODUCTO1 = 'Producto 1'
-    PRODUCTO2 = 'Producto 2'
-    PRODUCTO3 = 'Producto 3'
+    NOTEBOOKS = 'Notebooks'
+    TARJETA_GRAFICA = 'Tarjeta_Grafica'
+    AUDIFONOS = 'Audifonos'
+    COMPUTADORES = 'Computadores'
+
     
     STATE_CHOICES = (
-        (PRODUCTO1, 'Producto 1'),
-        (PRODUCTO2, 'Producto 2'),
-        (PRODUCTO3, 'Producto 3'),
+        (NOTEBOOKS, 'Notebooks'),
+        (TARJETA_GRAFICA, 'Tarjeta_Grafica'),
+        (AUDIFONOS, 'Audifonos'),
+        (COMPUTADORES, 'Computadores'),
     )
 
     
@@ -34,8 +37,8 @@ class Producto( models.Model ):
     nombre_producto = models.CharField( max_length = 100, blank = False, null = False )
     descripcion = models.TextField( default= '' )
     precio = models.CharField( max_length = 10 )
-    tipo = models.CharField( max_length=10, choices=STATE_CHOICES, default=PRODUCTO1)
-    
+    tipo = models.CharField( max_length=10, choices=STATE_CHOICES, default=NOTEBOOKS)
+    imageUrl = models.CharField( max_length = 255, default = '' )
 
     def __str__( self ):
         return self.nombre_producto

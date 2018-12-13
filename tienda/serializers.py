@@ -11,7 +11,7 @@ class TiendaSerializer( serializers.HyperlinkedModelSerializer ):
 class ProductoSerializer( serializers.HyperlinkedModelSerializer ):
     class Meta:
             model = Producto
-            fields = ( 'id', 'nombre_producto', 'descripcion', 'precio', 'tipo')
+            fields = ( 'id', 'nombre_producto', 'descripcion', 'precio', 'tipo', 'imageUrl')
 
 
 class VendedorSerializer ( serializers.HyperlinkedModelSerializer ):
