@@ -53,8 +53,8 @@ class Vendedor( models.Model ):
     id = models.AutoField( primary_key = True )
     nombre_vendedor = models.CharField( max_length = 255 )
     
-    email_v = models.CharField(max_length = 255)
-    password_v = models.CharField(max_length=30)
+    email = models.CharField(max_length = 255)
+    password = models.CharField(max_length=30)
 
 
     def __str__( self ):
